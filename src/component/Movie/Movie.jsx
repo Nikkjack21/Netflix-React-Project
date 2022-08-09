@@ -5,10 +5,12 @@ import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { UserAuth } from "../../context/AuthContext";
 import { db } from "../../Firebase";
 
+
 const Movie = ({ items }) => {
   const [like, setLike] = useState(false);
   const [saved, setSaved] = useState(false);
   const { user } = UserAuth();
+ 
 
   const movieID = doc(db, "users", `$(user?.email)`);
 
@@ -28,7 +30,7 @@ const Movie = ({ items }) => {
     }
   };
   
-  console.log(movieID)
+ 
 
   return (
     <div className="w-[160px] sm:w-[200px] md:w-[240px] inline-block cursor-pointer relative p-2">
